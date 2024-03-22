@@ -7,11 +7,27 @@ function nameIn() {
     name = nameInput.value.trim();
     nameList.push(name);
     console.log(nameList);
-    // listGen();
+    listGen();
     nameInput.value = '';
 }
 
 function listGen() {
+    const theNameList = document.getElementById('nameList');
+    theNameList.innerHTML = '';
+
+    for (let i = 0; i < nameList.length; ++i) {
+        const name = nameList[i];
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+
+        li.className = 'list-group-item';
+        span.textContent = name;
+
+        li.appendChild(span);
+        theNameList.appendChild(li);
+    }
+
+    /* Old code:
     // Make a container element for the list
     let listContainer = document.createElement('div');
 
@@ -36,7 +52,7 @@ function listGen() {
 
         // Reset the list item
         listItem = document.createElement('li');
-    }
+    }*/
 }
 
 function reset() {
@@ -55,4 +71,5 @@ function darkMode() {
     // Toggles darkmode for background and text
     document.getElementById('body').classList.toggle('dark-mode-bg');
 }
+
 document.getElementById('name').addEventListener('click', nameIn);

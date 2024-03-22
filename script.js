@@ -1,10 +1,12 @@
 let nameList = [];
 const p = document.getElementById('p');
 function nameIn() {
-    let name; //Stores
-    name = prompt('Enter one name.');
-    nameList.unshift(name);
+    let name; // Stores
+    //name = prompt('Enter one name.');
+    name = nameInput.value.trim();
+    nameList.push(name);
     console.log(nameList);
+    // listGen();
 }
 
 function listGen() {
@@ -18,7 +20,6 @@ function listGen() {
     let listItem = document.createElement('li');
 
     // Add it to the page
-    //document.body.insertAdjacentElement('beforeend', listContainer);
     p.append(listContainer);
     listContainer.appendChild(listElement);
 
@@ -26,7 +27,6 @@ function listGen() {
     let numberOfListItems = nameList.length;
 
     for (let i = 0; i < numberOfListItems; ++i) {
-    // Use this if the array elements are text only
         listItem.textContent = nameList[i];
 
         // Add listItem to the listElement
@@ -40,4 +40,16 @@ function listGen() {
 function reset() {
     p.innerHTML = '';
     nameList = [];
+}
+
+function darkMode() {
+    // Toggles darkmode for buttons
+    document.getElementById('gen').classList.toggle('btn-success');
+    document.getElementById('gen').classList.toggle('btn-outline-success');
+    document.getElementById('name').classList.toggle('btn-primary');
+    document.getElementById('name').classList.toggle('btn-outline-primary');
+    document.getElementById('reset').classList.toggle('btn-danger');
+    document.getElementById('reset').classList.toggle('btn-outline-danger');
+    // Toggles darkmode for background and text
+    document.getElementById('body').classList.toggle('dark-mode-bg');
 }

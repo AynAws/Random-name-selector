@@ -29,3 +29,8 @@
 .row {
     margin-bottom: 10px;
 }
+
+.dark-mode-bg {
+    background-color: black;
+    color: white;
+}

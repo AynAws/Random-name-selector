@@ -31,31 +31,37 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 
-    <body>
+    <body id="body">
         <div class="container">
             <h1 class="center">Random Name Selector</h1>
             <h3 class="center">Enter names and submit them one at a time!</h3>
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-success" onclick="listGen()">Click to generate the list</button>
+                    <button type="button" class="btn btn-success" id='gen' onclick="listGen()">Click to generate the list</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-success" onclick="nameIn()">Enter Name Here</button>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter a name">
+                    <button type="button" class="btn btn-primary" id='name' onclick="nameIn()">Submit</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
-                    <div id="p"></div>
+                    <div id="p">
+                            <ul class="list-group" id="nameList">
+                            </ul>
+                    </div>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-danger" onclick="reset()">Reset</button>
+                    <button type="button" class="btn btn-danger" id='reset' onclick="reset()">Reset</button>
                 </div>
                 <div class="col-3 center">
                     <h3>Chosen one:</h3><br>
-                    <div>Placeholder</div>
+                    <div id="randomName" class="mt-3 text-center">Placeholder</div>
                 </div>
             </div>
         </div>
+
+        <button onclick="darkMode()">dark mode</button>
 
             <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

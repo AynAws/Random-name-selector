@@ -36,3 +36,8 @@ function listGen() {
         listItem = document.createElement('li');
     }
 }
+
+function reset() {
+    p.innerHTML = '';
+    nameList = [];
+}

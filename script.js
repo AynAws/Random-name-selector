@@ -55,3 +55,4 @@ function darkMode() {
     // Toggles darkmode for background and text
     document.getElementById('body').classList.toggle('dark-mode-bg');
 }
+document.getElementById('name').addEventListener('click', nameIn);

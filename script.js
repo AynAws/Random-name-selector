@@ -1,5 +1,6 @@
 let nameList = [];
 const p = document.getElementById('p');
+const nameInput = document.getElementById('nameInput');
 function nameIn() {
     let name; // Stores
     //name = prompt('Enter one name.');
@@ -7,6 +8,7 @@ function nameIn() {
     nameList.push(name);
     console.log(nameList);
     // listGen();
+    nameInput.value = '';
 }
 
 function listGen() {

@@ -18,9 +18,9 @@ function listGen() {
     for (let i = 0; i < nameList.length; ++i) {
         const name = nameList[i];
         const li = document.createElement('li');
-        const span = document.createElement('span');
+        const span = document.createElement('div');
 
-        li.className = 'list-group-item';
+        //li.className = 'list-group-item';
         span.textContent = name;
 
         li.appendChild(span);
@@ -58,3 +58,9 @@ function darkMode() {
 document.getElementById('name').addEventListener('click', nameIn);
 
 document.getElementById('randomName').addEventListener('click', pickRandomName);
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      nameIn();
+    }
+});

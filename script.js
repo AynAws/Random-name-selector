@@ -1,9 +1,7 @@
 let nameList = [];
-const p = document.getElementById('p');
 const nameInput = document.getElementById('nameInput');
 function nameIn() {
-    let name; // Stores
-    //name = prompt('Enter one name.');
+    let name; // Stores input
     name = nameInput.value.trim();
     nameList.push(name);
     console.log(nameList);
@@ -38,8 +36,9 @@ function pickRandomName() {
     listGen();
 }
 
+// Resets the list and clears the chosen name
 function reset() {
-    p.innerHTML = '';
+    document.getElementById('nameList').textContent = '';
     nameList = [];
 }
 
@@ -51,16 +50,17 @@ function darkMode() {
     document.getElementById('name').classList.toggle('btn-outline-primary');
     document.getElementById('reset').classList.toggle('btn-danger');
     document.getElementById('reset').classList.toggle('btn-outline-danger');
-    // Toggles darkmode for background and text
-    document.getElementById('body').classList.toggle('dark-mode-bg');
     document.getElementById('dark').classList.toggle('btn-dark');
     document.getElementById('dark').classList.toggle('btn-outline-light');
+    // Toggles darkmode for background and text
+    document.getElementById('body').classList.toggle('dark-mode-bg');
 }
 
-document.getElementById('name').addEventListener('click', nameIn);
+document.getElementById('name').addEventListener('click', nameIn); // Runs nameIn() when 'Add Name' button is clicked
 
-document.getElementById('randomName').addEventListener('click', pickRandomName);
+document.getElementById('randomName').addEventListener('click', pickRandomName); // Picks a random name when 'Randomly Select a Name' button is clicked
 
+// Allows ENTER button to run nameIn() function
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
       nameIn();

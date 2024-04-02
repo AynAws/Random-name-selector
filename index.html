@@ -37,11 +37,11 @@
             <h3 class="center">Enter names and submit them one at a time!</h3>
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button type="button" class="btn btn-success" id='randomName'>Click to choose a name</button>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter a name">
+                    <button type="button" class="btn btn-primary mx-1" id='name'>Add Name</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter a name">
-                    <button type="button" class="btn btn-primary mx-1" id='name'>Submit</button>
+                    <button type="button" class="btn btn-success" id='randomName'>Click to choose a name</button>
                 </div>
             </div>
             <div class="row">
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <button onclick="darkMode()">dark mode</button>
+        <button type="button" class="btn btn-dark" onclick="darkMode()" id="dark">Dark Mode Toggle</button>
 
             <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

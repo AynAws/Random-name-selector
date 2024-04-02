@@ -45,14 +45,16 @@ function reset() {
 
 function darkMode() {
     // Toggles darkmode for buttons
-    document.getElementById('gen').classList.toggle('btn-success');
-    document.getElementById('gen').classList.toggle('btn-outline-success');
+    document.getElementById('randomName').classList.toggle('btn-success');
+    document.getElementById('randomName').classList.toggle('btn-outline-success');
     document.getElementById('name').classList.toggle('btn-primary');
     document.getElementById('name').classList.toggle('btn-outline-primary');
     document.getElementById('reset').classList.toggle('btn-danger');
     document.getElementById('reset').classList.toggle('btn-outline-danger');
     // Toggles darkmode for background and text
     document.getElementById('body').classList.toggle('dark-mode-bg');
+    document.getElementById('dark').classList.toggle('btn-dark');
+    document.getElementById('dark').classList.toggle('btn-outline-light');
 }
 
 document.getElementById('name').addEventListener('click', nameIn);

@@ -12,13 +12,12 @@ function nameIn() {
 function listGen() {
     const theNameList = document.getElementById('nameList');
     theNameList.innerHTML = '';
-
+    // Adds name to HTML list
     for (let i = 0; i < nameList.length; ++i) {
         const name = nameList[i];
         const li = document.createElement('li');
         const span = document.createElement('div');
 
-        //li.className = 'list-group-item';
         span.textContent = name;
 
         li.appendChild(span);
@@ -26,6 +25,7 @@ function listGen() {
     }
 }
 
+// Clears previous choice, makes and displays a new one and then removes the equivalent from the list of options
 function pickRandomName() {
     const randomNameDiv = document.getElementById('randomNameDiv');
     randomNameDiv.textContent = ''
